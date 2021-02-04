@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using WebMaze.DbStuff.Model;
 using WebMaze.DbStuff.Model.Police;
+using WebMaze.DbStuff.Model.Polyclinic;
 
 namespace WebMaze.DbStuff
 {
@@ -25,6 +26,19 @@ namespace WebMaze.DbStuff
         public DbSet<BusRoute> BusRoute { get; set; }
 
         public DbSet<UserTask> UserTasks { get; set; }
+
+        // Polyclinic tables
+        public DbSet<Categories> Categories { get; set; }
+        public DbSet<Doctors> Doctors { get; set; }
+        public DbSet<Patients> Patients { get; set; }
+        public DbSet<PolyclinicUser> PolyclinicUser { get; set; }
+        public DbSet<Positions> Positions { get; set; }
+        public DbSet<PriceDoctors> PriceDoctors { get; set; }
+        public DbSet<Schedule> Schedule { get; set; }
+        public DbSet<Specializations> Specializations { get; set; }
+        public DbSet<Visits> Visits { get; set; }
+        public DbSet<VisitTypes> VisitTypes { get; set; }
+
 
         public WebMazeContext(DbContextOptions dbContext) : base(dbContext) { }
 

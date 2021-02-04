@@ -1,0 +1,135 @@
+﻿@using WebMaze.Models.Polyclinic
+@model PatientViewModel
+
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="~/css/Polyclinic.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Nunito+Sans&display=swap" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("#selectedOption").change(function () {
+                var option = document.getElementById("selectedOption");
+                var optionValue = option.value;
+                $("#patientNumber").val(optionValue);
+            })
+        })
+    </script>
+</head>
+
+<title>Reception</title>
+
+<body>
+    <!-- HEADER -->
+    <header class="header__polyclinic">
+        <div class="header__inner">
+            <a href="/Polyclinic/Index"><img src="~/image/Polyclinic/logo.png" alt="" width="270"></a>
+            <nav class="nav">
+                <a class="nav__link" href="/Polyclinic/Index">Main</a>
+                <a class="nav__link" href="#">Price list</a>
+                <a class="nav__link" href="/Polyclinic/Laboratory">Laboratory price list</a>
+                <a class="nav__link" href="#">Appointments schedule</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Patient info -->
+    <div class="reception__main">
+        <!-- <div class="margin__right">Search patient by:</div> -->
+        <form asp-action="FindPatient" asp-controller="Polyclinic">
+            <div>
+                <div class="search__by">
+                    Search patient by:</divsearch__by>
+                    <select asp-for="SearchBy" class="select__search" name="searchOption" id="selectedOption">
+                        <option value="PatientID">Patient number</option>
+                        <option value="LastName">Last name</option>
+                        <option value="BirthYear">Year of birth</option>
+                        <option value="Age">Age (full years)</option>
+                        <option value="Gender">Gender</option>
+                        <option value="AttendingPhysician">Attending psysician</option>
+                        <option value="DocumentNumber">Document number</option>
+                        <option value="BloodGroupright">Blood group</option>
+                        <option value="PhFactor">Ph factor</option>
+                        <option value="Deseases">Desease</option>
+                    </select>
+
+                    <input class="input__search" type="text" id="patientNumber" />
+                    <input type="submit" value="Find patient" />
+
+                </div>
+                </div>
+        </form>
+
+        <div class="left__block">
+            <div class="patient__block">
+                <div class="margin__right">Patient number:</div>
+                <input type="text" readonly id="patientNumber" />
+            </div>
+
+            <div class="img_w_buttons">
+                <img class="photo" src="/image/Polyclinic/photo_icon.png" />
+
+
+                <form action="@Url.Action("ChoosePhoto", "Polyclinic")" method="post" enctype="multipart/form-data">
+                    @Html.HiddenFor(x => x.PatientID)
+                    <div>
+                        <input type="file" name="Photo" value="Choose photo" />
+                    </div>
+                    <!--<p>
+                    </p>
+                    <button style="display:block;width:120px; height:30px;" onclick="document.getElementById('getFile').click()">Choose photo</button>
+                    <input type='file' id="getFile" style="display:none">
+                -->
+                </form>
+
+                <div class="list">
+                    First name: @Html.TextBoxFor(x => x.FirstName)
+                </div>
+                <div class="list">
+                    Last name: @Html.TextBoxFor(x => x.LastName)
+                </div>
+                <div class="list">
+                    Middle name: @Html.TextBoxFor(x => x.MiddleName)
+                </div>
+                <div class="list">
+                    Date of birth: @Html.TextBoxFor(x => x.BirthDate.Date)
+                </div>
+                <div class="blocks_near">
+                    Years: <input class="years__months" type="text" readonly />
+                    Months: <input class="years__months" type="text" readonly />
+                </div>
+                <div class="list">
+                    Gender: @Html.TextBoxFor(x => x.Gender, new { style="width:500px"})
+                </div>
+            </div>
+            <div>
+
+            </div>
+
+
+
+            <div>
+                <input type="submit" value="Add patient" />
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+    </div>
+
+</body>

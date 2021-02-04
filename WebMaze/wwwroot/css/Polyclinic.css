@@ -1,0 +1,225 @@
+﻿body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* 1st Page (Sign in)
+============================================*/
+
+/* Header
+==============================*/
+.header__polyclinic {
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Nav
+==============================*/
+.nav__link {
+    margin-left: 45px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: black;
+    transition: opacity 0.1s linear;
+}
+    .nav__link:link {
+        text-decoration: none;
+    }
+
+    .nav__link:first-child {
+        margin-left: 0;
+    }
+
+    .nav__link:hover {
+        color: #10c9c3;
+        transition: opacity 0.1s linear;
+    }
+
+/* Intro
+==============================*/
+.intro {
+    padding: 130px 150px 0 120px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 545px;
+    background: #e9e9e9 url(../image/Polyclinic/bg.jpg) no-repeat center center;
+}
+
+.intro__title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin: 7px auto 0px 20px;
+    font-size: 26px;
+    line-height: 36px;
+    /*color: #212121;*/
+    color: black;
+}
+
+/* Input fields
+==============================*/
+.box_login {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.box_password {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+#password {
+    background: url(../image/Polyclinic/show_password.png) no-repeat scroll;
+    background-position-x: 200px;
+}
+
+.input_text {
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    width: 250px;
+    border-style: groove;
+    border-color: aqua;
+    font-size: 17px;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    height: 28px;
+    color: black;
+    outline: none;
+    font-weight: 600;
+    border-width: 3px;
+}
+    .input_text:focus {
+        outline: none;
+        border-style: groove;
+        border-color: black;
+    }
+
+::-webkit-input-placeholder {
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    color: aqua;
+}
+
+.input_checkbox {
+    display: flex;
+    align-items: center;
+    margin-left: 338px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.checkbox__label {
+    margin-left: -50px;
+    margin-right: 5px;
+    font-weight: 700;
+}
+
+/* Button
+==============================*/
+.button_signin {
+    margin-top: 20px;
+    width: 100px;
+    height: 45px;
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: black;
+    background-color: #10c9c3;
+    border: none;
+    outline: none;
+}
+    .button_signin:hover {
+        background-color: #66FFFF;
+    }
+
+
+/* Reception Page
+============================================*/
+
+/* 
+==============================*/
+.reception__main {
+    margin-top: 25px;
+}
+
+
+
+.search__by {
+    display: flex;
+    margin-right: 10px;
+}
+
+.input__search {
+    width: 400px;
+    margin-right: 20px;
+}
+
+.left__block {
+    max-width: 400px;
+}
+
+.patient__block {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.img_w_buttons {
+}
+
+.photo {
+    max-width: 130px;
+    margin-bottom: 15px;
+
+}
+    .patient__block:first-child {
+    margin-top: 25px;
+}
+
+.margin__right {
+    margin-right: 10px;
+}
+
+
+
+.select__search {
+    margin: auto 15px auto 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 30px;
+}
+
+.years__months {
+    width: 50px;
+    margin-left: 10px;
+    border-color: transparent;
+}
+
+.blocks_near {
+    display: flex;
+    margin: 10px 0px 0px 0px;
+}
+
+.list {
+    margin: 10px 0px 0px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

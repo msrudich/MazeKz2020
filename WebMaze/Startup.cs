@@ -116,6 +116,11 @@ namespace WebMaze
             services.AddScoped(s => new BusRouteRepository(s.GetService<WebMazeContext>()));
 
             services.AddScoped(s => new UserTaskRepository(s.GetService<WebMazeContext>()));
+
+            //Polyclinic repos
+            services.AddScoped(s => new PolyclinicUserRepository(s.GetService<WebMazeContext>()));
+            services.AddScoped(s => new PatientRepository(s.GetService<WebMazeContext>()));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

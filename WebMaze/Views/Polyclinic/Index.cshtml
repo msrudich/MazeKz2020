@@ -1,0 +1,51 @@
+﻿@using WebMaze.Models.Polyclinic
+@model PolyclinicUserViewModel
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="~/css/Polyclinic.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Nunito+Sans&display=swap" rel="stylesheet">
+</head>
+
+<title>Polyclinic</title>
+
+<body>
+    <!-- HEADER -->
+    <header class="header__polyclinic">
+        <div class="header__inner">
+            <a href="/Polyclinic/Index"><img src="~/image/Polyclinic/logo.png" alt="" width="270"></a>
+            <nav>
+                <a class="nav__link" href="/Polyclinic/Reception">Reception</a>
+                <a class="nav__link" href="#">Price list</a>
+                <a class="nav__link" href="/Polyclinic/Laboratory">Laboratory price list</a>
+                <a class="nav__link" href="#">Appointments schedule</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- SIGN IN -->
+    <div class="intro">
+        <div>
+            <div class="intro__title">Welcome,</div>
+            <div class="intro__title">you need to sign in</div>
+
+            <form method="post">
+                @Html.HiddenFor(x => x.ReturnURL)
+                @Html.HiddenFor(x => x.Position)
+
+                <div class="box_login">
+                    @Html.TextBoxFor(x => x.UserName, new { @class = "input_text", @placeholder = " Login", @autofocus = "autofocus" })
+                </div>
+                <div class="box_password">
+                    @Html.TextBoxFor(x => x.Password, new { @class = "input_text", @type = "password", @placeholder = "Password" })
+                </div>
+                <div>
+                    <input class="button_signin" type="submit" value="Sign in" />
+                </div>
+            </form>
+
+        </div>
+    </div>
+</body>
